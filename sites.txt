@@ -1,0 +1,310 @@
+github|https://github.com/{nick}|itemprop="name",repositories,events-tab|
+gitlab|https://gitlab.com/{nick}|profile-header,projects,activity|
+bitbucket|https://bitbucket.org/{nick}/|repositories,profile|
+stackoverflow|https://stackoverflow.com/users?search={nick}|reputation,user-avatar|
+habr|https://habr.com/ru/users/{nick}/|Блог,Публикации,Карма|
+vc|https://vc.ru/u/{nick}|посты,комментарии,публикации|
+pikabu|https://pikabu.ru/@{nick}|рейтинг,подписчиков,комментарии|
+reddit|https://www.reddit.com/user/{nick}|Redditor for,karma,u/|Log In or Sign Up
+tiktok|https://www.tiktok.com/@{nick}|TikTok - Make Your Day,user-info|Log in to TikTok
+telegram|https://t.me/{nick}|tgme_page,Subscribe,Join Channel|
+vk|https://vk.com/{nick}|id="profile",vk.com/images,Друзья|Log in,ВКонтакте
+youtube|https://www.youtube.com/@{nick}|subscriberCountText,channel,home|
+twitch|https://www.twitch.tv/{nick}|channel,videos,followers|
+twitter|https://twitter.com/{nick}|profile-header,Followers|Log in to Twitter
+instagram|https://www.instagram.com/{nick}/|profilePage,edge_followed_by|login
+pinterest|https://www.pinterest.com/{nick}/|Pinterest,ideas,boards|
+discord|https://discord.com/users/{nick}|Discord,Profile,User|
+steamcommunity|https://steamcommunity.com/id/{nick}|profile_header,level,friends|
+lastfm|https://www.last.fm/user/{nick}|scrobbles,recent,library|
+spotify|https://open.spotify.com/user/{nick}|spotify:user,playlist,follower|
+mastodon|https://mastodon.social/@{nick}|following,followers,posts|
+habr_career|https://career.habr.com/{nick}|опыт,проекты,навыки|
+devto|https://dev.to/{nick}|data-guest-username,articles,Articles|
+medium|https://medium.com/@{nick}|Medium,followers,posts|
+codepen|https://codepen.io/{nick}|CodePen,projects,pens|
+replit|https://replit.com/@{nick}|Replit,repls,teams|
+github_gist|https://gist.github.com/{nick}|gist,Gists,forks|
+sourceforge|https://sourceforge.net/u/{nick}|profile,projects,activity|
+codeberg|https://codeberg.org/{nick}|repositories,activity,profile|
+fosstodon|https://fosstodon.org/@{nick}|following,followers,posts|
+matrix|https://matrix.to/#/@{nick}|Matrix,profile|
+xda|https://forum.xda-developers.com/members/{nick}.|posts,reputation,XDA|
+4pda|https://4pda.to/forum/index.php?showuser={nick}|пользователь,репутация,сообщения|
+overclockers|https://overclockers.ru/user/{nick}|профиль,сообщения,рейтинг|
+cyberforum|https://www.cyberforum.ru/members/{nick}/|профиль,сообщения,баллы|
+linuxorg|https://www.linux.org.ru/people/{nick}/|профиль,топики,комментарии|
+stackexchange|https://stackexchange.com/users?userids={nick}|reputation,answers|
+quora|https://www.quora.com/profile/{nick}|Quora,Answers,Followers|
+askfm|https://ask.fm/{nick}|Askfm,answers,questions|
+yandex_q|https://yandex.ru/q/user/{nick}/|вопросы,ответы,рейтинг|
+mail_ответы|https://otvet.mail.ru/user/{nick}/|рейтинг,вопросы,ответы|
+linkedin|https://www.linkedin.com/in/{nick}|profile-view,Connect,Followers|Sign in
+facebook|https://www.facebook.com/{nick}|profile,photos,friends|Log in
+ok|https://ok.ru/profile/{nick}|ОК,друзья,фотографии|Войти
+myspace|https://myspace.com/{nick}|profile,friends,blogs|
+flickr|https://www.flickr.com/people/{nick}/|photostream,profile,favorites|
+deviantart|https://www.deviantart.com/{nick}|art,gallery,profile|
+behance|https://www.behance.net/{nick}|projects,Appreciations,views|
+dribbble|https://dribbble.com/{nick}|Shots,Followers,Following|
+mixcloud|https://www.mixcloud.com/{nick}/|playlists,followers,profile|
+soundcloud|https://soundcloud.com/{nick}|tracks,playlists,followers|
+bandcamp|https://bandcamp.com/{nick}|music,albums,fans|
+vimeo|https://vimeo.com/{nick}|videos,profile,followers|
+twitch_chat|https://www.twitch.tv/popout/{nick}/chat?popout=|chat,messages|
+keybase|https://keybase.io/{nick}|cryptocurrency,proofs,profile|
+pastebin|https://pastebin.com/u/{nick}|pastes,profile,api|
+giphy|https://giphy.com/{nick}|gifs,channels,profile|
+imgur|https://imgur.com/user/{nick}|posts,comments,reputation|
+patreon|https://www.patreon.com/{nick}|campaign,posts,patrons|
+tumblr|https://{nick}.tumblr.com|tumblr.com,Tumblr|
+ello|https://ello.co/{nick}|Ello,Posts,Following|
+vero|https://vero.co/{nick}|Vero,Followers,Posts|
+meetup|https://www.meetup.com/members/{nick}/|Meetup,member,Upcoming events|
+minds|https://www.minds.com/{nick}|Minds,posts,Followers|
+gab|https://gab.com/{nick}|Gab,Posts,Followers|
+parler|https://parler.com/profile/{nick}|Parler,posts,followers|
+teletype|https://teletype.in/@{nick}|Teletype,posts,profile|
+cossa|https://cossa.ru/profile/{nick}/|профиль,статьи,комментарии|
+tjournal|https://tjournal.ru/@{nick}|посты,комментарии,рейтинг|
+dtf|https://dtf.ru/u/{nick}|посты,комментарии,рейтинг|
+gamesmail|https://games.mail.ru/forums/profile/{nick}/|профиль,сообщения,рейтинг|
+rustorka|https://rustorka.com/member.php?username={nick}|профиль,посты,репутация|
+nnmclub|https://nnmclub.to/forum/profile.php?mode=viewprofile&u={nick}|профиль,сообщения|
+rutracker|https://rutracker.org/forum/profile.php?mode=viewprofile&username={nick}|профиль,посты,стаж|
+prog_linux|https://www.linux.org.ru/people/{nick}/|профиль,топики,комментарии|
+ixbt|https://forum.ixbt.com/users/{nick}/|профиль,сообщения,рейтинг|
+chip|https://forum.chip.de/user/{nick}|profile,posts,reputation|
+LinuxTalks.co (предположительный профиль через членов сообщества)
+linuxtalks|https://linuxtalks.co/community/user/{nick}|сообщения,репутация,на сайте с|Войти
+linux_ru_forum|https://linux-ru.ru/forum/memberlist.php?mode=viewprofile&un={nick}|профиль,сообщения,зарегистрирован|Войти
+linux_ru_forum_alt|https://forum.linux.ru/memberlist.php?mode=viewprofile&un={nick}|профиль,сообщения,зарегистрирован|Войти
+linux_ru_main|https://linux.ru/forum/memberlist.php?mode=viewprofile&un={nick}|профиль,сообщения,зарегистрирован|Войти
+binaryoptions.net (предположительно phpBB)
+binaryoptions|https://forum.binaryoptions.net/memberlist.php?mode=viewprofile&un={nick}|профиль,сообщения,зарегистрирован|Войти
+bimmerfest.com (vBulletin, профили вида /members/xxx)
+bimmerfest|https://www.bimmerfest.com/members/{nick}/|posts,member,profile|Sign Up
+billions.ucoz.ru (Ucoz, профиль может быть недоступен по нику)
+billions|https://billions.ucoz.ru/forum/2-1-{nick}|сообщения,темы|Вход
+bikinomaniya.ucoz.ru (аналогично)
+bikinomaniya|https://bikinomaniya.ucoz.ru/forum/2-1-{nick}|сообщения,темы|Вход
+bigpurplefans.ipbhost.com (IPB, 403, профиль предположительно)
+bigpurplefans|https://bigpurplefans.ipbhost.com/profile/{nick}|profile,posts|Sign In
+forums.bharat-rakshak.com (403, vBulletin)
+bharatrakshak|https://forums.bharat-rakshak.com/member.php?username={nick}|posts,profile|Login
+bhangrateamsforum.com (phpBB)
+bhangrateams|https://bhangrateamsforum.com/memberlist.php?mode=viewprofile&un={nick}|profile,posts|Login
+bezposrednikov.at.ua (Ucoz)
+bezposrednikov|https://bezposrednikov.at.ua/forum/2-1-{nick}|сообщения|Вход
+betsportslive.ru (phpBB)
+betsportslive|https://forum.betsportslive.ru/memberlist.php?mode=viewprofile&un={nick}|профиль,сообщения|Войти
+bestwritingforum.com (возможно WordPress)
+bestwritingforum|https://bestwritingforum.com/forums/users/{nick}/|profile,posts|Login
+bestflowers.ru (phpBB)
+bestflowers|https://forum.bestflowers.ru/memberlist.php?mode=viewprofile&un={nick}|профиль,сообщения|Войти
+best-image.ucoz.ru
+bestimage|https://best-image.ucoz.ru/forum/2-1-{nick}|сообщения|Вход
+best-game.ucoz.org
+bestgame|https://best-game.ucoz.org/forum/2-1-{nick}|сообщения|Вход
+besplatno-games.3dn.ru
+besplatnogames|https://besplatno-games.3dn.ru/forum/2-1-{nick}|сообщения|Вход
+beskuda.ucoz.ru
+beskuda|https://beskuda.ucoz.ru/forum/2-1-{nick}|сообщения|Вход
+besedka.net (простейший форум)
+besedka|http://besedka.net/profile.php?username={nick}|profile,posts|Login
+berserkworld.borda.ru (borda.ru)
+berserkworld|https://berserkworld.borda.ru/?1-2-0-{nick}|profile|Вход
+bereitsgesehen.de (немецкий phpBB)
+bereitsgesehen|https://www.bereitsgesehen.de/forum/memberlist.php?mode=viewprofile&un={nick}|profile,posts|Login
+benzua.com (phpBB)
+benzua|http://forum.benzua.com/memberlist.php?mode=viewprofile&un={nick}|profile,posts|Login
+benzforum.com (аналог bimmerfest)
+benzforum|https://www.benzforum.com/members/{nick}/|posts,profile|Sign Up
+247sports.com (спортивный портал)
+247sports|https://247sports.com/User/{nick}/|profile,posts|Sign In
+xgm|https://xgm.guru/p/{nick}|профиль,посты,рейтинг|
+habr_qna|https://qna.habr.com/user/{nick}|вопросы,ответы,рейтинг|
+tproger|https://tproger.ru/users/{nick}|статьи,комментарии|
+codewars|https://www.codewars.com/users/{nick}|rank,honor,completed|
+sqlru|https://sql.ru/forum/user/{nick}|профиль,сообщения|
+freelansim|https://freelansim.ru/users/{nick}|отзывы,заказы|
+kwork|https://kwork.ru/user/{nick}|отзывы,проекты|
+fl|https://www.fl.ru/users/{nick}|профиль,отзывы|
+habr_freelance|https://freelance.habr.com/freelancers/{nick}|портфолио,отзывы|
+rusjev|https://rusjev.net/profile/{nick}|posts,reputation|
+videoshaker|https://videoshaker.pro/user/{nick}|profile,videos|
+prophotos|https://prophotos.ru/user/{nick}|photos,comments|
+rutube|https://rutube.ru/user/{nick}|videos,subscribers|
+pikabu_blog|https://pikabu.ru/@{nick}|рейтинг,посты|
+vc_blog|https://vc.ru/u/{nick}|посты,комментарии|
+dzen|https://dzen.ru/id/{nick}|публикации,подписчики|
+teletype|https://teletype.in/@{nick}|посты,статистика|
+author_today|https://author.today/u/{nick}|профиль,книги|
+samlib|https://samlib.ru/{nick}|произведения,отзывы|
+proza|https://proza.ru/avtor/{nick}|стихи,проза|
+stihi|https://stihi.ru/avtor/{nick}|стихи,рецензии|
+livemaster|https://www.livemaster.ru/{nick}|мастер,отзывы|
+yarche|https://yarche.ru/user/{nick}|профиль,публикации|
+ideyka|https://ideyka.ru/user/{nick}|проекты,комментарии|
+maminsite|https://maminsite.ru/user/{nick}|профиль,форум|
+babyblog|https://www.babyblog.ru/user/{nick}|дневник,комментарии|
+woman|https://www.woman.ru/user/{nick}|профиль,посты|
+kosmetista|https://kosmetista.ru/user/{nick}|отзывы,профиль|
+irecommend|https://irecommend.ru/users/{nick}|отзывы,рейтинг|
+otzovik|https://otzovik.com/users/{nick}|отзывы,оценки|
+flamp|https://flamp.ru/user/{nick}|отзывы,профиль|
+zoon|https://zoon.ru/user/{nick}|отзывы,оценки|
+yell|https://yell.ru/user/{nick}|отзывы,профиль|
+napopravku|https://napopravku.ru/user/{nick}|отзывы,профиль|
+docdoc|https://docdoc.ru/user/{nick}|отзывы,профиль|
+prodoctorov|https://prodoctorov.ru/user/{nick}|отзывы,профиль|
+b17|https://www.b17.ru/user/{nick}|профиль,консультации|
+psy|https://psy.ru/users/{nick}|профиль,статьи|
+vsepsy|https://vsepsy.ru/user/{nick}|профиль,отзывы|
+avito_profile|https://www.avito.ru/user/{nick}|профиль,объявления|
+youla|https://youla.ru/user/{nick}|профиль,объявления|
+irr|https://irr.ru/user/{nick}|профиль,объявления|
+ebay|https://www.ebay.com/usr/{nick}|profile,feedback|
+etsy|https://www.etsy.com/people/{nick}|profile,reviews|
+aliexpress|https://activity.aliexpress.com/user/{nick}|profile,reviews|
+amazon|https://www.amazon.com/gp/profile/{nick}|profile,reviews|
+steam|https://steamcommunity.com/id/{nick}|profile,level|
+epicgames|https://www.epicgames.com/id/{nick}|profile,games|
+gog|https://www.gog.com/u/{nick}|profile,games|
+origin|https://www.origin.com/usa/en-us/profile/{nick}|profile,games|
+xbox|https://www.xbox.com/en-US/profile/{nick}|profile,gamerscore|
+playstation|https://my.playstation.com/profile/{nick}|profile,trophies|
+nintendo|https://accounts.nintendo.com/profile/{nick}|profile,games|
+minecraft|https://namemc.com/profile/{nick}|profile,skins|
+hypixel|https://hypixel.net/members/{nick}/|profile,posts|
+osu|https://osu.ppy.sh/users/{nick}|profile,rank|
+chess|https://www.chess.com/member/{nick}|profile,rating|
+lichess|https://lichess.org/@/{nick}|profile,rating|
+cod|https://profile.callofduty.com/cod/{nick}|profile,stats|
+valorant|https://tracker.gg/valorant/profile/riot/{nick}|profile,rank|
+csgo|https://steamcommunity.com/id/{nick}/stats/csgo|stats,profile|
+dota2|https://steamcommunity.com/id/{nick}/stats/dota2|stats,profile|
+wot|https://tankstats.eu/player/{nick}|profile,stats|
+wows|https://wows-numbers.com/player/{nick}|profile,stats|
+eve|https://evewho.com/character/{nick}|profile,corporation|
+destiny|https://www.bungie.net/en/Profile/254/{nick}|profile,stats|
+warframe|https://warframe.market/profile/{nick}|profile,reviews|
+pathofexile|https://www.pathofexile.com/account/view-profile/{nick}|profile,characters|
+guildwars2|https://gw2efficiency.com/user/{nick}|profile,stats|
+ffxiv|https://ffxiv.consolegameswiki.com/wiki/User:{nick}|profile,classes|
+wow|https://worldofwarcraft.com/en-us/character/{nick}|profile,achievements|
+diablo3|https://diablo3.blizzard.com/en-us/profile/{nick}|profile,paragon|
+hearthstone|https://hearthstone.blizzard.com/en-us/profile/{nick}|profile,rank|
+starcraft|https://starcraft2.com/en-us/profile/{nick}|profile,league|
+overwatch|https://overwatch.blizzard.com/en-us/career/{nick}|profile,stats|
+rocketleague|https://rocketleague.tracker.network/profile/steam/{nick}|profile,rank|
+fortnite|https://fortnitetracker.com/profile/all/{nick}|profile,stats|
+apexlegends|https://apex.tracker.gg/apex/profile/origin/{nick}|profile,stats|
+pubg|https://pubg.op.gg/user/{nick}|profile,stats|
+genshin|https://enka.network/u/{nick}|profile,characters|
+honkai|https://www.hoyolab.com/accountCenter/profile?id={nick}|profile,posts|
+tiktok_embed|https://www.tiktok.com/@{nick}|user,posts|
+instagram_embed|https://www.instagram.com/{nick}/|profile,posts|
+twitter_embed|https://twitter.com/{nick}|profile,tweets|
+facebook_embed|https://www.facebook.com/{nick}|profile,posts|
+linkedin_embed|https://www.linkedin.com/in/{nick}|profile,experience|
+pinterest_embed|https://www.pinterest.ru/{nick}/|profile,pins|
+tumblr_embed|https://{nick}.tumblr.com|profile,posts|
+snapchat|https://www.snapchat.com/add/{nick}|profile|
+tiktok|https://www.tiktok.com/@{nick}|user,posts|
+likee|https://likee.com/@{nick}|profile,videos|
+telegram_web|https://t.me/{nick}|profile|
+discord_web|https://discord.com/users/{nick}|profile|
+twitch|https://www.twitch.tv/{nick}|profile,videos|
+youtube|https://www.youtube.com/@{nick}|channel|
+reddit_user|https://www.reddit.com/user/{nick}|profile,posts|
+medium|https://medium.com/@{nick}|profile,posts|
+devto|https://dev.to/{nick}|profile,posts|
+hashnode|https://hashnode.com/@{nick}|profile,posts|
+wordpress|https://{nick}.wordpress.com|profile,posts|
+blogger|https://www.blogger.com/profile/{nick}|profile,posts|
+livejournal|https://{nick}.livejournal.com|profile,posts|
+teletype|https://teletype.in/@{nick}|profile,posts|
+gitlab|https://gitlab.com/{nick}|profile,projects|
+bitbucket|https://bitbucket.org/{nick}/|profile,repos|
+sourceforge|https://sourceforge.net/u/{nick}|profile,projects|
+codeberg|https://codeberg.org/{nick}|profile,repos|
+fosstodon|https://fosstodon.org/@{nick}|profile,posts|
+mastodon_social|https://mastodon.social/@{nick}|profile,posts|
+pleroma|https://pleroma.site/@{nick}|profile,posts|
+lemmy|https://lemmy.ml/u/{nick}|profile,posts|
+kbin|https://kbin.social/u/{nick}|profile,posts|
+matrix|https://matrix.to/#/@{nick}|profile,rooms|
+element|https://element.io/@/{nick}|profile,rooms|
+rocketchat|https://open.rocket.chat/direct/{nick}|profile|
+zulip|https://chat.zulip.org/#narrow/user/{nick}|profile|
+gitter|https://gitter.im/{nick}|profile|
+keybase|https://keybase.io/{nick}|profile,proofs|
+gravatar|https://gravatar.com/{nick}|profile|
+aboutme|https://about.me/{nick}|profile|
+linktree|https://linktr.ee/{nick}|profile|
+beacons|https://beacons.ai/{nick}|profile|
+snipfeed|https://snipfeed.co/{nick}|profile|
+bio|https://bio.link/{nick}|profile|
+carrd|https://{nick}.carrd.co|profile|
+contactinbio|https://contactinbio.com/{nick}|profile|
+tapbio|https://tap.bio/@{nick}|profile|
+lnk|https://lnk.bio/{nick}|profile|
+shorby|https://shor.by/{nick}|profile|
+allmylinks|https://allmylinks.com/{nick}|profile|
+milkshake|https://milkshake.app/user/{nick}|profile|
+solo|https://solo.to/{nick}|profile|
+withcabin|https://withcabin.com/user/{nick}|profile|
+biofm|https://bio.fm/{nick}|profile|
+bio.site|https://bio.site/{nick}|profile|
+linkinprofile|https://linkinprofile.com/{nick}|profile|
+linkzip|https://linkzip.io/{nick}|profile|
+linkly|https://linkly.me/{nick}|profile|
+linkfork|https://linkfork.xyz/{nick}|profile|
+linkbun|https://linkbun.com/{nick}|profile|
+linkin.bio|https://linkin.bio/{nick}|profile|
+linktr.ee|https://linktr.ee/{nick}|profile|
+beacons|https://beacons.ai/{nick}|profile|
+withcabin|https://withcabin.com/user/{nick}|profile|
+snipfeed|https://snipfeed.co/{nick}|profile|
+bio.link|https://bio.link/{nick}|profile|
+tap.bio|https://tap.bio/@{nick}|profile|
+carrd|https://{nick}.carrd.co|profile|
+contactinbio|https://contactinbio.com/{nick}|profile|
+shorby|https://shor.by/{nick}|profile|
+allmylinks|https://allmylinks.com/{nick}|profile|
+milkshake|https://milkshake.app/user/{nick}|profile|
+solo|https://solo.to/{nick}|profile|
+bio.site|https://bio.site/{nick}|profile|
+biofm|https://bio.fm/{nick}|profile|
+lnk.bio|https://lnk.bio/{nick}|profile|
+linktr.ee|https://linktr.ee/{nick}|profile|
+beacons|https://beacons.ai/{nick}|profile|
+withcabin|https://withcabin.com/user/{nick}|profile|
+snipfeed|https://snipfeed.co/{nick}|profile|
+bio.link|https://bio.link/{nick}|profile|
+tap.bio|https://tap.bio/@{nick}|profile|
+carrd|https://{nick}.carrd.co|profile|
+contactinbio|https://contactinbio.com/{nick}|profile|
+shorby|https://shor.by/{nick}|profile|
+allmylinks|https://allmylinks.com/{nick}|profile|
+milkshake|https://milkshake.app/user/{nick}|profile|
+solo|https://solo.to/{nick}|profile|
+bio.site|https://bio.site/{nick}|profile|
+biofm|https://bio.fm/{nick}|profile|
+lnk.bio|https://lnk.bio/{nick}|profile|
+linktr.ee|https://linktr.ee/{nick}|profile|
+beacons.ai|https://beacons.ai/{nick}|profile|
+withcabin.com|https://withcabin.com/user/{nick}|profile|
+snipfeed.co|https://snipfeed.co/{nick}|profile|
+bio.link|https://bio.link/{nick}|profile|
+tap.bio|https://tap.bio/@{nick}|profile|
+carrd.co|https://{nick}.carrd.co|profile|
+contactinbio.com|https://contactinbio.com/{nick}|profile|
+shor.by|https://shor.by/{nick}|profile|
+allmylinks.com|https://allmylinks.com/{nick}|profile|
+milkshake.app|https://milkshake.app/user/{nick}|profile|
+solo.to|https://solo.to/{nick}|profile|
+bio.site|https://bio.site/{nick}|profile|
+bio.fm|https://bio.fm/{nick}|profile|
+lnk.bio|https://lnk.bio/{nick}|profile|
