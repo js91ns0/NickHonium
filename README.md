@@ -12,6 +12,6 @@ NickHonium — это инструмент командной строки дл�
 
 Установка:
 
-git clone https://github.com/ваш_ник/socmint.git
-cd socmint
+git clone https://github.com/js91ns0/NickHonium/
+cd NickHonium
 pip install -r requirements.txt
