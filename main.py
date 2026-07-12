@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# pip install requests beautifulsoup4
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from bs4 import BeautifulSoup
@@ -8,27 +7,32 @@ import os
 import sys
 import json
 import argparse
+import random
 from urllib.parse import urlparse
+from tqdm import tqdm
 
 GREEN = "\033[92m"
 RESET = "\033[0m"
 YELLOW = "\033[93m"
 RED = "\033[91m"
 
+USER_AGENTS = [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/121.0",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/121.0",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+]
+
 DEFAULT_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0 Safari/537.36"
+    "User-Agent": random.choice(USER_AGENTS)
 }
 TIMEOUT = 10
 RETRIES = 2
-REQUEST_DELAY = 0.5 
+REQUEST_DELAY = 0.5
 
 def load_sites_from_file(filename="sites.txt"):
-    """
-    Загружает список соцсетей из файла.
-    Формат строки: name|url|markers_list|login_markers_list
-    markers_list и login_markers_list разделены запятыми (без пробелов).
-    Возвращает словарь: {name: {"url": url, "markers": list, "login_markers": list}}
-    """
     sites = {}
     if not os.path.exists(filename):
         print(f"Файл {filename} не найден. Используйте пример:")
@@ -60,7 +64,8 @@ def clear():
 
 def fetch_url(url, headers=None):
     if headers is None:
-        headers = DEFAULT_HEADERS
+        headers = DEFAULT_HEADERS.copy()
+        headers["User-Agent"] = random.choice(USER_AGENTS)
     last_exc = None
     for attempt in range(RETRIES + 1):
         try:
@@ -76,32 +81,55 @@ def analyze_response(platform, nick, url, resp, site_info):
     text = resp.text or ""
     markers = site_info.get("markers", [])
     login_markers = site_info.get("login_markers", [])
+
     if status == 200:
-        if "404" in text or "Not Found" in text or "Страница не найдена" in text:
+        not_found_phrases = [
+            "404", "not found", "страница не найдена",
+            "does not exist", "no user", "could not be found",
+            "this account doesn't exist", "пользователь не найден"
+        ]
+        if any(phrase in text.lower() for phrase in not_found_phrases):
             return "not_found"
-        for lm in login_markers:
-            if lm.lower() in text.lower():
-                return "login_required"
-        for m in markers:
-            try:
-                m_formatted = m.format(nick=nick)
-            except Exception:
-                m_formatted = m
-            if m_formatted.lower() in text.lower():
-                return "found"
+
+        login_phrases = ["login", "sign in", "log in", "sign up", "register", "вход", "регистрация"]
+        if any(phrase in text.lower() for phrase in login_phrases):
+            for lm in login_markers:
+                if lm.lower() in text.lower():
+                    return "login_required"
+
         soup = BeautifulSoup(text, "html.parser")
-        title = (soup.title.string or "") if soup.title else ""
-        if nick.lower() in title.lower():
+
+        if soup.title and nick.lower() in soup.title.get_text(strip=True).lower():
             return "found"
-        for a in soup.find_all("a", href=True)[:50]:
-            if nick.lower() in a["href"].lower() or nick.lower() in a.get_text("").lower():
+        for meta in soup.find_all("meta"):
+            content = meta.get("content", "")
+            if nick.lower() in content.lower():
                 return "found"
+
+        for tag in soup.find_all(['h1', 'h2', 'h3', 'strong', 'span', 'div']):
+            parent = tag.find_parent(['nav', 'footer', 'header'])
+            if parent:
+                continue
+            tag_text = tag.get_text(strip=True)
+            if nick.lower() in tag_text.lower():
+                for m in markers:
+                    try:
+                        m_formatted = m.format(nick=nick)
+                    except Exception:
+                        m_formatted = m
+                    if m_formatted.lower() in tag_text.lower():
+                        return "found"
+
         return "unknown"
+
     elif status in (301, 302):
         final = resp.url
         if nick.lower() in final.lower():
-            return "found (redirect)"
+            bad_redirects = ["login", "signin", "404", "error"]
+            if not any(bad in final.lower() for bad in bad_redirects):
+                return "found (redirect)"
         return f"redirect ({final})"
+
     elif status == 403:
         return "forbidden"
     elif status == 429:
@@ -121,18 +149,19 @@ def check_profile(platform, nick, site_info):
     res = analyze_response(platform, nick, url, r, site_info)
     return platform, url, res
 
-def scan_nick(nick, sites, workers=5, show_progress=True):
+def scan_nick(nick, sites, workers=5):
     results = []
-    total = len(sites)
-    done = 0
+    start_time = time.time()
     with ThreadPoolExecutor(max_workers=workers) as ex:
         futures = {ex.submit(check_profile, name, nick, info): name for name, info in sites.items()}
-        for fut in as_completed(futures):
-            done += 1
-            plat, url, status = fut.result()
-            results.append((plat, url, status))
-            if show_progress:
-                print(f"{YELLOW}[{done}/{total}]{RESET} scanned: {plat}")
+        with tqdm(total=len(sites), desc="Сканирование", unit="сайт", ncols=80) as pbar:
+            for fut in as_completed(futures):
+                plat, url, status = fut.result()
+                results.append((plat, url, status))
+                pbar.update(1)
+                pbar.set_postfix({"Текущий": plat, "Статус": status[:10]})
+    elapsed = time.time() - start_time
+    print(f"\nВремя выполнения: {elapsed:.2f} сек.")
     return results
 
 def save_results_json(results, filename="socmint_results.json"):
@@ -150,16 +179,22 @@ def save_results_json(results, filename="socmint_results.json"):
 
 def print_header():
     banner = r"""
-$$__$$_$$$$$$__$$$$__$$__$$__$$__$$__$$$$__$$__$$_$$$$$$_$$__$$_$$___$
-$$$_$$___$$___$$__$$_$$_$$___$$__$$_$$__$$_$$$_$$___$$___$$__$$_$$$_$$
-$$_$$$___$$___$$_____$$$$____$$$$$$_$$__$$_$$_$$$___$$___$$__$$_$$_$_$
-$$__$$___$$___$$__$$_$$_$$___$$__$$_$$__$$_$$__$$___$$___$$__$$_$$___$
-$$__$$_$$$$$$__$$$$__$$__$$__$$__$$__$$$$__$$__$$_$$$$$$__$$$$__$$___$
+ _______   .__          __       ___ ___                  .__
+ \      \  |__|  ____  |  | __  /   |   \   ____    ____  |__| __ __   _____
+ /   |   \ |  |_/ ___\ |  |/ / /    ~    \ /  _ \  /    \ |  ||  |  \ /     \
+/    |    \|  |\  \___ |    <  \    Y    /(  <_> )|   |  \|  ||  |  /|  Y Y  \
+\____|__  /|__| \___  >|__|_ \  \___|_  /  \____/ |___|  /|__||____/ |__|_|  /
+        \/          \/      \/        \/               \/                  \/
 
-By js91ns0.
+Version 2.0
+
+GitHub - https://github.com/js91ns0/NickHonium.git
 
 """
-    print(GREEN + banner + RESET)
+    lines = banner.splitlines()
+    main_banner = "\n".join(lines[:-1]) + "\n"
+    signature = lines[-1]
+    print(GREEN + main_banner + RESET + signature + RESET)
 
 def print_results(results):
     print("\nResults:\n")
@@ -172,12 +207,19 @@ def print_results(results):
             color = RED
         print(f"{color}{platform:15} {status:20} {url}{RESET}")
 
+def print_summary(results):
+    found = sum(1 for _, _, s in results if "found" in s.lower())
+    not_found = sum(1 for _, _, s in results if "not_found" in s.lower())
+    errors = len(results) - found - not_found
+    print(f"\n📊 Итог: найдено {found}, не найдено {not_found}, ошибок {errors} из {len(results)}")
+
 def main():
     parser = argparse.ArgumentParser(description="SOCMINT - поиск профилей по нику в соцсетях (из файла sites.txt)")
     parser.add_argument("nick", nargs="?", help="Ник для поиска (если не указан, будет запрошен в цикле)")
     parser.add_argument("-s", "--sites", default="sites.txt", help="Файл со списком соцсетей")
     parser.add_argument("-o", "--output", default="socmint_results.json", help="Файл для сохранения результатов (JSON) (будет перезаписан при каждом новом поиске, если не указать уникальное имя)")
-    parser.add_argument("-v", "--verbose", action="store_true", help="Показать прогресс")
+    parser.add_argument("-w", "--workers", type=int, default=5, help="Количество потоков (по умолчанию 5)")
+    parser.add_argument("-v", "--verbose", action="store_true", help="Показать прогресс (не используется, теперь всегда показывается)")
     args = parser.parse_args()
 
     sites = load_sites_from_file(args.sites)
@@ -190,8 +232,9 @@ def main():
         clear()
         print_header()
         print(f"Scanning: {nick}\n")
-        results = scan_nick(nick, sites, workers=5, show_progress=args.verbose)
+        results = scan_nick(nick, sites, workers=args.workers)
         print_results(results)
+        print_summary(results)
         save_results_json(results, args.output)
         return
 
@@ -204,8 +247,9 @@ def main():
             print("Выход.")
             break
         print(f"\nScanning: {nick}\n")
-        results = scan_nick(nick, sites, workers=5, show_progress=args.verbose)
+        results = scan_nick(nick, sites, workers=args.workers)
         print_results(results)
+        print_summary(results)
         outfile = f"socmint_{nick}_{int(time.time())}.json" if args.output == "socmint_results.json" else args.output
         save_results_json(results, outfile)
         input("\nНажмите Enter, чтобы продолжить...")
