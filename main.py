@@ -211,7 +211,7 @@ def print_summary(results):
     found = sum(1 for _, _, s in results if "found" in s.lower())
     not_found = sum(1 for _, _, s in results if "not_found" in s.lower())
     errors = len(results) - found - not_found
-    print(f"\n📊 Итог: найдено {found}, не найдено {not_found}, ошибок {errors} из {len(results)}")
+    print(f"\n Итог: найдено {found}, не найдено {not_found}, ошибок {errors} из {len(results)}")
 
 def main():
     parser = argparse.ArgumentParser(description="SOCMINT - поиск профилей по нику в соцсетях (из файла sites.txt)")
