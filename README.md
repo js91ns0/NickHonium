@@ -10,7 +10,7 @@ NickHonium — это инструмент командной строки дл�
 - Сохранение результатов в **JSON** для дальнейшего анализа.
 - **Интерактивный режим** (можно вводить ники один за другим).
 
-Установка:
+**Установка:**
 
 git clone https://github.com/js91ns0/NickHonium/
 
@@ -18,6 +18,17 @@ cd NickHonium
 
 pip install -r requirements.txt
 
-Donate:
+**Использование:**
 
+cd NickHonium
+
+python3 main.py
+
+**Поддержать проект:**
+
+TRON: TKjJe5YzjsjnvubxaBdaTp8pKFawya1zEW
+
+GRAM (aka TON): UQDURvAbzjlNv_dCbDnSFb0bkUJIjKk78skWV7Az9owk_5IZ
+
+ETH: 0x665bDBbD6c0d9D2Ee590fFec37B7D89963645E5b
 
