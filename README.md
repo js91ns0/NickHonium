@@ -32,3 +32,5 @@ GRAM (aka TON): UQDURvAbzjlNv_dCbDnSFb0bkUJIjKk78skWV7Az9owk_5IZ
 
 ETH: 0x665bDBbD6c0d9D2Ee590fFec37B7D89963645E5b
 
+BTC: bc1qrh87ds7gc9vdwrdvl0n3fffnclep0dh8frwdl3
+
