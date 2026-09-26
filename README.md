@@ -12,25 +12,25 @@ NickHonium — это инструмент командной строки дл�
 
 **Установка:**
 
-git clone https://github.com/js91ns0/NickHonium/
+`git clone https://github.com/js91ns0/NickHonium/`
 
-cd NickHonium
+`cd NickHonium`
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 **Использование:**
 
-cd NickHonium
+`cd NickHonium`
 
-python3 main.py
+`python3 main.py`
 
 **Поддержать проект:**
 
-TRON: TKjJe5YzjsjnvubxaBdaTp8pKFawya1zEW
+TRON: `TKjJe5YzjsjnvubxaBdaTp8pKFawya1zEW`
 
-GRAM (aka TON): UQDURvAbzjlNv_dCbDnSFb0bkUJIjKk78skWV7Az9owk_5IZ
+GRAM (aka TON): `UQDURvAbzjlNv_dCbDnSFb0bkUJIjKk78skWV7Az9owk_5IZ`
 
-ETH: 0x665bDBbD6c0d9D2Ee590fFec37B7D89963645E5b
+ETH: `0x665bDBbD6c0d9D2Ee590fFec37B7D89963645E5b`
 
-BTC: bc1qrh87ds7gc9vdwrdvl0n3fffnclep0dh8frwdl3
+BTC: `bc1qrh87ds7gc9vdwrdvl0n3fffnclep0dh8frwdl3`
 
